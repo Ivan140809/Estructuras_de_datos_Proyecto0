@@ -2,6 +2,6 @@
 #define APP_H
 
 // Definicion de la funcion principal del robot con todas sus caracteristicas.
-void app_run();
+void correr_app();
 
 #endif
