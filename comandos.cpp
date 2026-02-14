@@ -4,6 +4,7 @@
 #include <iostream>
 #include <sstream>
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 // Aca se hace toooda la logica de las funciones, cuando se haga la entrega 1,2,3 correspondientemente
@@ -66,6 +67,17 @@ if (entrada != "ayuda" || argum.empty() || !extra.empty()) {
   cout<<"Comando invalido"<<endl;
   return false;
   }
+ifstream Archivo(archivo);
+
+    if (!Archivo) {   
+        cout << "Archivo erroneo "
+             << archivo
+             << " no se encuentra o no puede leerse."
+             << endl;
+        return false;
+    }
+
+    cout << "(Resultado exitoso) Archivo encontrado." << endl;
 
 cout <<  "Comando valido, Funcion proximamente a implementarse"<<endl;
 
@@ -87,6 +99,15 @@ if (!validarParametros("cargar_elementos", params, cantidad) || entrada != "carg
 	cout << "Comando invalido" <<endl;
       return false;
 }
+ifstream Archivo(archivo);
+
+    if (!Archivo) {
+        cout << "Archivo erroneo, "
+             << archivo
+             << " no se encuentra o no puede leerse."
+             << endl;
+        return false;
+    }
 	cout << "Comando valido, Funcion proximamente a implementarse"<<endl;
 	return false;
 }
@@ -220,6 +241,13 @@ if (comandoexacto(linea, "ubicar_elementos")) {
 	if (entrada != "guardar" || !extra.empty() || !validarParametros("guardar", params, cantidad)) {
             return false;
         }
+   ofstream Salida(archivo);
+
+    if (!Salida) {
+        cout << "error no se pudo crear o escribir en el archivo "<< archivo << endl;
+        return false;
+    }
+        cout << " Resultado exitoso Archivo listo para guardar." << endl;
  	cout << "Comando valido, Funcion proximamente a implementarse"<<endl;
         return false;
 }

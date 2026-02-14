@@ -150,11 +150,10 @@ bool validar_agregar_analisis(string params[], int cantidad){
         return false;
     }
 
-    if (objeto.empty())
-    {
-        cout << "Objeto no valido" << endl;
-        return false;
-    }
+    if (objeto != "roca" && objeto != "crater" && objeto != "monticulo" && objeto != "duna") {
+    cout << "Objeto no valido" << endl;
+    return false;
+	}
 
     if(cantidad==3) {
     if(params[2].empty()){

@@ -8,19 +8,22 @@ void ayuda_print_general(){
 cout << "Comandos disponibles: "<<endl;
 cout <<endl;
 
-cout << " ayuda"<< "Descripción: " <<endl;
+cout << " ayuda" <<endl;
+cout << "Descripción: " <<endl;
 cout << endl;
 cout << "Muestra todos los comandos disponibles para la terminal, con una descripción de su uso" <<endl;
 cout << endl;
 cout <<endl;
 
-cout << " ayuda comando"<<"Descripción: "<<endl;
+cout << " ayuda comando" <<endl;
+cout <<"Descripción: "<<endl;
 cout << endl; 
 cout << " Muestra la forma de ejecutar cada comando con su forma de ejecutarlo y parametros"<<endl;
 cout << endl;
 cout << endl;
 
-cout << " cargar_comandos"<< "Descripción: " <<endl;
+cout << " cargar_comandos" <<endl;
+cout << "Descripción: " <<endl;
 cout << endl;
 cout << " Carga en memoria los comandos de desplazamiento contenidos el archivo identificado por archivo cargar_comandos"<<endl;  
 cout << " es decir, utiliza adecuadamente las estructuras lineales para cargar la información de los comandos en memoria."<<endl;
@@ -29,7 +32,8 @@ cout << " la información debe sobreescribirse en memoria,es decir, no se deben 
 cout << endl;
 cout << endl;
 
-cout << " cargar_elementos"<< "Descripción: "<<endl;
+cout << " cargar_elementos" <<endl;
+cout << "Descripción: "<<endl;
 cout<< endl;
 cout << "Carga en memoria los datos de puntos de interés o elementos contenidos en el archivo identificado por nombre_archivo"<<endl; 
 cout << "es decir, utiliza adecuadamente las estructuras lineales para cargar la información de los elementos en memoria." <<endl;
@@ -38,7 +42,8 @@ cout << "la información debe sobreescribirse en memoria, es decir, no se deben 
 cout<<  endl;
 cout << endl;
 
-cout << " agregar_movimiento"<< "Descripción: "<<endl;
+cout << " agregar_movimiento" <<endl;
+cout << "Descripción: "<<endl;
 cout << endl;
 cout << "Agrega el comando de movimiento descrito a la lista de comandos del robot “Curiosity”. El movimiento puede ser de dos tipos: avanzar o girar. " <<endl;
 cout << "La magnitud corresponde al valor del movimiento; si es avanzar, el número de unidades que se espera avanzar, si es girar la cantidad de grados que debe girar."<<endl;
@@ -47,7 +52,8 @@ cout << "Si no se envía la información completa y adecuada del comando de movi
 cout << endl;
 cout << endl;
 
-cout << " agregar_analisis"<< "Descripción: " <<endl;
+cout << " agregar_analisis" <<endl;
+cout << "Descripción: " <<endl;
 cout << endl;
 cout << "Agrega el comando de análisis descrito a la lista de comandos del robot “Curiosity”. El análisis puede ser de tres tipos: fotografiar, composicion o perforar. "<<endl;
 cout << "El objeto es el nombre del elemento que se quiere analizar (roca, arena, monticulo, ...). El comentario es opcional y permite agregar más información sobre el elemento o el análisis,"<<endl;
@@ -56,7 +62,8 @@ cout << "Este no puede agregarse a la lista de los comandos que se enviarán al 
 cout << endl;
 cout << endl;
 
-cout << " agregar_elemento"<< "Descripción: "<<endl;
+cout << " agregar_elemento" <<endl;
+cout << "Descripción: "<<endl;
 cout << endl;
 cout << "Agrega el componente o elemento descrito a la lista de puntos de interés del robot “Curiosity”. El tipo de componente puede ser uno entre roca, crater, monticulo o duna."<<endl; 
 cout << "El tamaño es un valor real que da cuenta de qué tan grande es el elemento; y la unidad de medida complementa este valor con la convención que se usó para su medición, de acuerdo a la tabla presentada anteriormente."<<endl;
@@ -65,14 +72,16 @@ cout << "Si no se envía la información completa y adecuada del elemento, éste
 cout <<endl;
 cout <<endl;
 
-cout << " guardar" << "Descripción: "<<endl;
+cout << " guardar" <<endl; 
+cout << "Descripción: "<<endl;
 cout << endl;
 cout << "Guarda en el archivo nombre_archivo la información solicitada de acuerdo al tipo de archivo: comandos almacena en el archivo la información de comandos de movimiento y de análisis que debe ejecutar el robot"<<endl; 
 cout << "elementos almacena en el archivo la información de los componentes o puntos de interés conocidos en el suelo marciano."<<endl;
 cout << endl;
 cout << endl;
 
-cout << "simular_comandos" << "Descripción:" << endl;
+cout << " simular_comandos" <<endl;
+cout << "Descripción:" << endl;
 cout << endl;
 cout << "Permite simular el resultado de los comandos de movimiento que se enviarán al robot “Curiosity” desde la Tierra, facilitando asi la validación de la nueva posición en la que podría ubicarse" <<endl; 
 cout << "Para ejecutarse adecuadamente, requiere conocer la posición actual (coordenadas x y y) del vehículo.a partir de la posición actual," <<endl;
@@ -82,7 +91,8 @@ cout << "Hay que tener en cuenta que sólo los comandos de movimiento son necesa
 cout <<endl;
 cout <<endl;
 
-cout << " ubicar_elementos"<<"Descripción: "<<endl;
+cout << " ubicar_elementos" <<endl;
+cout <<"Descripción: "<<endl;
 cout <<endl;
 cout << "El comando debe utilizar la información de puntos de interés almacenada en memoria para ubicarlos en una estructura de datos jerárquica adecuada" <<endl; 
 cout << "que permita luego realizar consultas geográficas sobre estos elementos. Si alguno de los elementos no puede agregarse adecuadamente, debe generarse un mensaje de error"<<endl; 
@@ -90,7 +100,8 @@ cout << "pero deben procesarse todos los elementos almacenados en memoria."<<end
 cout <<endl;
 cout <<endl;
 
-cout << " en_cuadrante" <<"Descripcion: "<<endl;
+cout << " en_cuadrante" <<endl;
+cout <<"Descripcion: "<<endl;
 cout << endl;
 cout << "Permite utilizar la estructura creada con el comando anterior para retornar una lista de los componentes o elementos que están dentro del cuadrante geográfico descrito por los límites de coordenadas en x y y."<< endl;
 cout << "Es necesario haber ejecutado el comando ubicar_elementos para poder realizar la búsqueda por cuadrantes." <<endl;
@@ -98,7 +109,8 @@ cout << "Los límites de coordenadas deben garantizar que coordX1 <coordX2 y coo
 cout <<endl;
 cout <<endl;
 
-cout << " crear_mapa" <<"Descripción:"<<endl;
+cout << " crear_mapa" <<endl;
+cout <<"Descripción:"<<endl;
 cout << endl; 
 cout << " El comando debe utilizar la información de puntos de interés almacenada en memoria para ubicarlos en una estructura no lineal y conectarlos entre sí"<<endl;
 cout << "teniendo en cuenta el coeficiente de conectividad dado. El objetivo es que cada elemento esté conectado a los demás elementos más cercanos a él, midiendo la cercanía a través de la distancia euclidiana entre los elementos."<<endl;
@@ -108,7 +120,8 @@ cout << "(ejemplo: si se van a ubicar 35 elementos, y el coeficiente de conectiv
 cout <<endl;
 cout <<endl;
 
-cout << " ruta_mas_larga" <<"Descripción: "<<endl;
+cout << " ruta_mas_larga" <<endl;
+cout <<"Descripción: "<<endl;
 cout << endl;
 cout << "Con el mapa ya creado, el comando permite identificar los dos componentes más alejados entre sí de acuerdo a las conexiones generadas. "<<endl;
 cout << "Es importante aclarar que el comando retorna los elementos más alejados de acuerdo a las conexiones que se encuentran en el mapa, no los elementos que estén a mayor distancia euclidiana entre sí."<<endl; 
@@ -117,7 +130,8 @@ cout << "y la secuencia de elementos que hay que seguir para ir del elemento ori
 cout<< endl;
 cout <<endl;
 
-cout << " salir"<<"Descripcion:" <<endl;
+cout << " salir" <<endl;
+cout <<"Descripcion:" <<endl;
 cout <<endl;
 cout << "Salir del programa del robot Curiosity"<<endl;
 }

@@ -9,6 +9,12 @@ void correr_app(){
 
 string linea;
 
+    cout << "   Bienvenido al sistema del robot Curiosity!!!!!"<<endl;
+    cout <<" Interactua con la linea de comandos para mostrar sus elementos"<<endl;
+    cout<<endl;
+    cout << "Escribe 'ayuda' para ver todos los comandos."<<endl;
+    cout << "Escribe 'ayuda comando' para ver el uso de un comando."<<endl<<endl;
+
  while (true) {
  cout<< "$  "; // personalizacion segun linea de comandos del SO
 
