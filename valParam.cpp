@@ -252,7 +252,7 @@ bool validar_guardar(string params[], int cantidad){
     }
 
     string tipo = params[0];
-    string archivo = params[1]
+    string archivo = params[1];
 
     if (tipo!= "comandos" && tipo!= "elementos") {
         
@@ -272,15 +272,29 @@ bool validar_guardar(string params[], int cantidad){
 
 bool validar_simular(string params[], int cantidad){
 
+    if (cantidad !=2) {
+        cout << "Cantidad de parametros incorrecta" << endl;
+        return false;
+    }
 
+    string x = params[0];
+    string y = params[1];
 
-
-
+    if (!esNumero(x) || !esNumero(y)) {
+        cout << "Coordenadas invalidas" << endl;
+        return false;
+    }
+    return true;
 }
 
 bool validar_ubicar(string params[], int cantidad){
 
+    if (cantidad !=1) {
+        cout << "Cantidad de parametros incorrecta" << endl;
+        return false;
+    }
 
+    return true;
 
 }
 
