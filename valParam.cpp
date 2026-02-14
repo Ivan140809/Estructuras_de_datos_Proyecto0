@@ -7,7 +7,7 @@ using namespace std;
 bool esNumero(const string& s) { // Nota: Este código fue desarrollado con asistencia de Claude (IA de Anthropic) para generar mejor con librerias la funcion de verificacion del numero.
     if (s.empty()) return false;
     char* end = nullptr;
-    strtod(s.c_str(), &end); 
+    strtod(s.c_str(), &end);
     return end && *end == '\0';
 }
 
@@ -18,21 +18,21 @@ bool validarParametros(string comando, string params[], int cantidad)
     {
         if (validarCargar_comandos(params, cantidad)){
 
-            cout << "Resultado exitoso, se cargaron los comandos..." << endl;
+            cout << "Resultado exitoso, se cargaron los comandos" << endl;
         }
     }
     else if (comando == "cargar_elementos")
 
         if (validarCargar_elementos(params, cantidad)){
 
-            cout << "Resultado exitoso, se cargaron los elementos..." << endl;
+            cout << "Resultado exitoso, se cargaron los elementos" << endl;
         }
 
     else if (comando == "agregar_movimiento")
 
         if(agregar_movimiento(params, cantidad)){
 
-            cout << "Resultado exitoso, se agrego el movimiento..." << endl;
+            cout << "Resultado exitoso, se agrego el movimiento" << endl;
 
         }
 
@@ -40,67 +40,67 @@ bool validarParametros(string comando, string params[], int cantidad)
 
         if(agregar_analisis(params, cantidad)){
 
-            cout << "Resultado exitoso, se agrego el analisis..." << endl;
+            cout << "Resultado exitoso, se agrego el analisis" << endl;
         }
 
     else if (comando == "agregar_elemento")
 
         if(agregar_elemento(params, cantidad)){
 
-            cout << "Resultado exitoso, se agrego el analisis..." << endl;
+            cout << "Resultado exitoso, se agrego el elemento" << endl;
         }
 
     else if (comando == "guardar")
         if(validar_guardar(params, cantidad)){
 
-            cout << "Resultado exitoso, se agrego el analisis..." << endl;
+            cout << "Resultado exitoso, se guardo correctamente" << endl;
         }
 
     else if (comando == "simular_comandos")
         if(validar_simular(params, cantidad)){
 
-            cout << "Resultado exitoso, se agrego el analisis..." << endl;
+            cout << "Resultado exitoso, comandos simulados" << endl;
         }
 
     else if (comando == "ubicar_elementos")
         if(validar_ubicar (params, cantidad)){
 
-            cout << "Resultado exitoso, se agrego el analisis..." << endl;
+            cout << "Resultado exitoso, se ubicaron los elementos" << endl;
         }
 
     else if (comando == "en_cuadrante")
         if(validar_cuadrante(params, cantidad)){
 
-            cout << "Resultado exitoso, se agrego el analisis..." << endl;
+            cout << "Resultado exitoso, se realizo el cuadrante" << endl;
         }
 
     else if (comando == "crear_mapa")
         if(validar_crearMapa(params, cantidad)){
 
-            cout << "Resultado exitoso, se agrego el analisis..." << endl;
+            cout << "Resultado exitoso, se creo el mapa" << endl;
         }
 
     else if (comando == "ruta_mas_larga")
         if(validar_ruta(params, cantidad)){
 
-            cout << "Resultado exitoso, se agrego el analisis..." << endl;
+            cout << "Resultado exitoso, se encontro la ruta mas larga" << endl;
         }
 
     else if (comando == "ayuda")
         if(validar_ayuda(params, cantidad)){
 
-            cout << "Resultado exitoso, se agrego el analisis..." << endl;
+            cout << "Resultado exitoso." << endl;
         }
 
     else if (comando == "salir")
         if(validar_salir(params, cantidad)){
 
-            cout << "Resultado exitoso, se agrego el analisis..." << endl;
+            cout << "Resultado exitoso, saliendo" << endl;
         }
 
     else
     {
-        cout << "Comando NO valido" << endl;
+        cout << "Comando no valido" << endl;
         return false;
     }
 }
