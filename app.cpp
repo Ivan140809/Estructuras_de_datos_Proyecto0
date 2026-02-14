@@ -16,11 +16,11 @@ string linea;
 	 break;
    }
 
- if (line.empty()) { // si la linea esta vacia se avanza, si el usuario da enter sobre todo
+ if (linea.empty()) { // si la linea esta vacia se avanza, si el usuario da enter sobre todo
     continue;
    }
 
- if(procesamiento_comando(linea)) { // Procesa la linea retorna true si el usuario pidió salir
+ if(procesador_linea(linea)) { // Procesa la linea retorna true si el usuario pidió salir
    break;
    }
 

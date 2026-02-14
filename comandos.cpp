@@ -12,8 +12,9 @@ using namespace std;
 
 bool comandoexacto(string& linea, char* entrada){ //esta funcion me verifica si es exactamente el comando para ejecutarse si no es asi manda falso y genera un mensaje de error 
    if(entrada==linea){
-   return true
+   return true;
  }
+}
 
 bool procesador_linea(string& linea){
 
