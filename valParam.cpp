@@ -27,7 +27,7 @@ bool validarParametros(string comando, string params[], int cantidad)
         return validar_agregar_analisis(params, cantidad);
 
     else if (comando == "agregar_elemento")
-        return validaragregar_elemento(params, cantidad);
+        return validar_agregar_elemento(params, cantidad);
 
     else if (comando == "guardar")
         return validar_guardar(params, cantidad);
