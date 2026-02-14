@@ -3,6 +3,8 @@
 #include <string>
 using namespace std;
 
+bool validarParametros(string comando, string params[], int cantidad);
+
 bool validarCargar_comandos(string params[], int cantidad);
 
 bool validarCargar_elementos(string params[], int cantidad);
