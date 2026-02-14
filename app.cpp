@@ -10,7 +10,7 @@ void correr_app(){
 string linea;
 
  while (true) {
- cout<< "$  " << endl; // personalizacion segun linea de comandos del SO
+ cout<< "$  "; // personalizacion segun linea de comandos del SO
 
  if (!getline(cin, linea)) { // validacion del comando principal si el usuario escribe algo raro
 	 break;
