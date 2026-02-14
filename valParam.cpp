@@ -1,6 +1,16 @@
 #include "valParam.h"
 #include <iostream>
+#include <string>
+#include <cstdlib>
 using namespace std;
+
+bool esNumero(const string& s) { // Nota: Este código fue desarrollado con asistencia de Claude (IA de Anthropic) para generar mejor con librerias la funcion de verificacion del numero.
+    if (s.empty()) return false;
+    char* end = nullptr;
+    strtod(s.c_str(), &end); 
+    return end && *end == '\0';
+}
+
 
 bool validarParametros(string comando, string params[], int cantidad)
 {
@@ -11,13 +21,13 @@ bool validarParametros(string comando, string params[], int cantidad)
         return validarCargar_elementos(params, cantidad);
 
     else if (comando == "agregar_movimiento")
-        return agregar_movimiento(params, cantidad);
+        return validar_agregar_movimiento(params, cantidad);
 
     else if (comando == "agregar_analisis")
-        return agregar_analisis(params, cantidad);
+        return validar_agregar_analisis(params, cantidad);
 
     else if (comando == "agregar_elemento")
-        return agregar_elemento(params, cantidad);
+        return validaragregar_elemento(params, cantidad);
 
     else if (comando == "guardar")
         return validar_guardar(params, cantidad);
@@ -53,14 +63,13 @@ bool validarParametros(string comando, string params[], int cantidad)
 
 bool validarCargar_comandos(string params[], int cantidad)
 {
-
     if (cantidad != 1)
     {
         cout << "Cantidad de parametros incorrecta"<<endl;
         return false;
     }
 
-    if (params[0] == "")
+    if (params[0].empty())
     {
         cout << "Nombre del archivo no encontrado" << endl;
         return false;
@@ -77,7 +86,7 @@ bool validarCargar_elementos(string params[], int cantidad){
         return false;
     }
 
-    if (params[0] == "")
+    if (params[0].empty())
     {
         cout << "Nombre del archivo no encontrado" << endl;
         return false;
@@ -87,67 +96,107 @@ bool validarCargar_elementos(string params[], int cantidad){
 
 }
 
-bool agregar_movimiento(string params[], int cantidad){
+bool validar_agregar_movimiento(string params[], int cantidad){
 
     if (cantidad!=3)
     {
-        cout<<"Cantidad de parametros NO valida"<<endl;
+        cout<<"Cantidad de parametros no valida"<<endl;
         return false;
     }
-    
+    string tipo = params[0];
+    string magn = params[1];
+    string uni  = params[2];
 
-    if (params[0]!="avanzar"||params[0]!="avanzar")
+    if ( tipo!="avanzar" && tipo != "girar")
     {
         cout<<"El tipo de movimiento es incorrecto"<<endl;
 
         return false;
     }
 
-    if (params[2]!="cm"||params[2]!="dm"||params[2]!="m"||params[2]!="km"||params[2]!="grd"||params[2]!="rad")
-    {
-        cout<<"Unidad de medida invalida"<<endl;
+    if (!esNumero(magn)) {
+        cout << "Magnitud invalida" << endl;
         return false;
     }
 
+    if (tipo == "avanzar") {
+        if (uni != "cm" && uni != "dm" && uni != "m" && uni != "km") {
+            cout << "Unidad de medida invalida" << endl;
+            return false;
+        }
+   } else{ //girar
+     if (uni != "grd" && uni != "rad") {
+            cout << "Unidad de medida invalida" << endl;
+            return false;
+	}
+   }
     return true;
-
 }
 
-bool agregar_analisis(string params[], int cantidad){
+bool validar_agregar_analisis(string params[], int cantidad){
 
-    if (cantidad!=2)
+    if (cantidad!=2 && cantidad!=3)
     {
-        cout<<"Cantidad de parametros NO valida"<<endl;
+        cout<<"Cantidad de parametros no valida"<<endl;
+
         return false;
     }
-    if (params[0]!="fotografiar"||params[0]!="composicion"||params[0]!="perforar")
+    string tipo = params[0];
+    string objeto  = params[1];
+
+    if ( tipo!="fotografiar" && tipo != "composicion" && tipo!="perforar")
     {
         cout<<"El tipo de analisis es incorrecto"<<endl;
 
         return false;
     }
 
-    if (params[1] == "")
+    if (objeto.empty())
     {
-        cout << "Objeto NO valido" << endl;
+        cout << "Objeto no valido" << endl;
         return false;
     }
+
+    if(cantidad==3) {
+    if(params[2].empty()){
+	cout << "Comentario no valido" << endl;
+            return false;
+	}
+    }
+  return true;
 }
 
-bool agregar_elemento(string params[], int cantidad){
+bool validar_agregar_elemento(string params[], int cantidad){
 
     if (cantidad!=5)
     {
-        cout<<"Cantidad de parametros NO valida"<<endl;
+        cout<<"Cantidad de parametros no valida"<<endl;
         return false;
     }
+    string tipo   = params[0];
+    string tam    = params[1];
+    string unidad = params[2];
+    string x      = params[3];
+    string y      = params[4];
 
-    if (params[2]!="roca"||params[2]!="crater"||params[2]!="monticulo"||params[2]!="duna")
+    if (tipo != "roca" && tipo != "crater" && tipo != "monticulo" && tipo != "duna")
     {
-       cout<<"El tipo de componente NO es valido"<<endl;
+       cout<<"El tipo de componente no es valido"<<endl;
        return false;
     }
-
+   if(!esNumero(tam)) {
+   cout<<"Tamano invalido"<<endl;
+   return false;
+}
+  if (unidad != "cm" && unidad != "dm" && unidad != "m" && unidad != "km") {
+        cout << "Unidad de medida invalida" << endl;
+        return false;
+    }
+  if (!esNumero(x) || !esNumero(y)) {
+        cout << "Coordenadas invalidas" << endl;
+        return false;
+    }
+   return true;
 }
 
 bool validar_guardar(string params[], int cantidad){
