@@ -246,20 +246,22 @@ bool validar_agregar_elemento(string params[], int cantidad){
 
 bool validar_guardar(string params[], int cantidad){
 
-    if( cantidad!=2){
+    if( cantidad != 2){
         
-        cout<< "El formato NO es valido"<<endl;
+        cout<< "El formato no es valido"<<endl;
     }
 
     string tipo = params[0];
+    string archivo = params[1]
 
-    if (tipo!="comandos"&& tipo!="comandos") {
+    if (tipo!= "comandos" && tipo!= "elementos") {
         
-        cout << "Tipo de archivo invalido" << endl;
+        cout << "Tipo de archivo invalido, solo usar 'comandos' o 'elementos'" << endl;
+
         return false;
     }
 
-    if (params[1].empty())
+    if (archivo.empty())
     {
         cout << "Nombre del archivo no encontrado" << endl;
         return false;
@@ -278,24 +280,67 @@ bool validar_simular(string params[], int cantidad){
 
 bool validar_ubicar(string params[], int cantidad){
 
-    
+
 
 }
 
 bool validar_cuadrante(string params[], int cantidad){
 
+	if (cantidad != 4) {
+        cout << "Cantidad de parametros incorrecta" << endl;
+        return false;
+    }
+if (!esNumero(params[0]) || !esNumero(params[1]) || !esNumero(params[2]) || !esNumero(params[3])) {
+        cout << "Parametros invalidos, solo numericos" << endl;
+        return false;
+    }
+    double x1 = stod(params[0]);
+    double x2 = stod(params[1]);
+    double y1 = stod(params[2]);
+    double y2 = stod(params[3]);
+
+	if (!(x1 < x2 && y1 < y2)) {
+        cout << "Rango invalido debe cumplirse que x1<x2 y y1<y2" << endl;
+        return false;
+    }
+
+   return true;
 }
 
 bool validar_crearMapa(string params[], int cantidad){
+ 	if (cantidad != 1) {
+        cout << "Cantidad de parametros incorrecta" << endl;
+        return false;
+    }
 
+    if (!esNumero(params[0])) {
+        cout << "Coeficiente invalido" << endl;
+        return false;
+    }
+
+    return true;
 }
 
 bool validar_ruta(string params[], int cantidad){
-
+ 	if (cantidad != 0) {
+        cout << "Cantidad de parametros incorrecta" << endl;
+        return false;
+    }
+    return true;
 }
 
 bool validar_ayuda(string params[], int cantidad){
 
+	if (cantidad != 0 && cantidad != 1) { //para ayuda y ayuda comando
+        cout << "Cantidad de parametros incorrecta" << endl;
+        return false;
+    }
+
+	if (cantidad == 1 && params[0].empty()) {
+        cout << "Comando para ayuda no valido" << endl;
+        return false;
+    }
+    return true;
 }
 
 bool validar_salir(string comando){
@@ -303,7 +348,7 @@ bool validar_salir(string comando){
     if (comando=="salir")
     {
         return true;
-        
+
     }else{
 
         cout<<"Comando no valido"<<endl;
@@ -311,11 +356,5 @@ bool validar_salir(string comando){
     }
 
     return false;
-
-
-
-    
-
-
 
 }
