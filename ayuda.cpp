@@ -23,35 +23,36 @@ cout << " salir"<<"Descripcion: Salir del programa del robot Curiosity";
 
 }
 
-void ayuda_print_comando_especifico(string& cmd){
+void ayuda_print_comando_especifico(string& entrada){
 
-if (cmd == "cargar_comandos") {
+if (entrada == "cargar_comandos") {
         cout << "Uso: cargar_comandos nombre_archivo" <<endl;
-    } else if (cmd == "cargar_elementos") {
+    } else if (entrada == "cargar_elementos") {
         cout << "Uso: cargar_elementos nombre_archivo" <<endl;
-    } else if (cmd == "agregar_movimiento") {
+    } else if (entrada == "agregar_movimiento") {
         cout << "Uso: agregar_movimiento tipo_mov magnitud unidad_med"<<endl;
-    } else if (cmd == "agregar_analisis") {
+    } else if (entrada == "agregar_analisis") {
         cout << "Uso: agregar_analisis tipo_analisis objeto ['comentario']" <<endl;
         cout << "  El comentario es opcional y va entre comillas simples." <<endl;
-    } else if (cmd == "agregar_elemento") {
+    } else if (entrada == "agregar_elemento") {
         cout << "Uso: agregar_elemento tipo_comp tamaño unidad_med coordX coordY " <<endl;
-    } else if (cmd == "guardar") {
+    } else if (entrada == "guardar") {
         cout << "Uso: guardar tipo_archivo nombre_archivo" <<endl;
-    } else if (cmd == "simular_comandos") {
+    } else if (entrada == "simular_comandos") {
         cout << "Uso: simular_comandos coordX coordY" <<endl;
-    } else if (cmd == "ubicar_elementos") {
+    } else if (entrada == "ubicar_elementos") {
         cout << "Uso: ubicar_elementos" <<endl;
-    } else if (cmd == "en_cuadrante") {
+    } else if (entrada == "en_cuadrante") {
         cout << "Uso: en_cuadrante coordX1 coordX2 coordY1 coordY2" <<endl;
-    } else if (cmd == "crear_mapa") {
+    } else if (entrada == "crear_mapa") {
         cout << "Uso: crear_mapa coeficiente_conectividad" <<endl;
-    } else if (cmd == "ruta_mas_larga") {
+    } else if (entrada == "ruta_mas_larga") {
         cout << "Uso: ruta_mas_larga "<<endl;
-    } else if (cmd == "salir") {
+    } else if (entrada == "salir") {
         cout << "Uso: salir" <<endl;
-    } else if (cmd == "ayuda") {
+    } else if (entrada == "ayuda") {
         cout << "Uso: ayuda | ayuda comando"<<endl;
     } else {
         cout << "Comando desconocido, ingresa 'ayuda' para ver los comandos."<<endl;
     }
+}
