@@ -289,7 +289,7 @@ bool validar_simular(string params[], int cantidad){
 
 bool validar_ubicar(string params[], int cantidad){
 
-    if (cantidad !=1) {
+    if (cantidad != 0) {
         cout << "Cantidad de parametros incorrecta" << endl;
         return false;
     }
