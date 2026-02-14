@@ -10,23 +10,24 @@ using namespace std;
 
 //Nota: El código establecido con los literales de stringstream fue desarrollado con asistencia de Claude (IA de Anthropic) para efectivizar su manejo al añadir y establecer el comando exacto que cada condicional debe cumplir al llamar a la validacion respectiva. 
 
-bool comandoexacto(string& linea, char* entrada){ //esta funcion me verifica si es exactamente el comando para ejecutarse si no es asi manda falso y genera un mensaje de error 
+bool comandoexacto(string& linea, const char* entrada){ //esta funcion me verifica si es exactamente el comando para ejecutarse si no es asi manda falso y genera un mensaje de error 
    if(entrada==linea){
    return true;
  }
+return false;
 }
 
 bool procesador_linea(string& linea){
 
 //funcion salir
 
-if(comandoexacto(linea, "salir"){
+if(comandoexacto(linea, "salir")){
    return true;
 }
 
 //funcion ayuda y ayuda comando.
 
-if(comandoexacto(linea,"ayuda"){
+if(comandoexacto(linea,"ayuda")){
   ayuda_print_general();
   return false;
 }
@@ -35,7 +36,7 @@ if (linea.rfind("ayuda ", 0) == 0) {
         istringstream iss(linea);
         string entrada, argum, extra;
         iss >> entrada >> argum >> extra;
-}
+
 
 if (entrada != "ayuda" || argum.empty() || !extra.empty()) {
     cout << "Formato invalido usa ayuda o ayuda comando"<<endl;
@@ -49,6 +50,7 @@ if (entrada != "ayuda" || argum.empty() || !extra.empty()) {
         }
 	ayuda_print_comando_especifico(argum);
         return false;
+}
  //funcion cargar_comandos
 
  if (linea.rfind("cargar_comandos ", 0) == 0) {
@@ -172,7 +174,7 @@ if (linea.rfind("en_cuadrante", 0) == 0) {
 }
 //funcion ubicar_elementos
 
-if (is_exact(line, "ubicar_elementos")) {
+if (comandoexacto(linea, "ubicar_elementos")) {
         string params[10];
         if (!validarParametros("ubicar_elementos", params, 0)) return false;
         cout << "Comando valido, Funcion proximamente a implementarse"<<endl;
@@ -197,7 +199,7 @@ if (is_exact(line, "ubicar_elementos")) {
 }
 
 //funcion ruta_mas_larga
-  if (is_exact(linea, "ruta_mas_larga")) {
+  if (comandoexacto(linea, "ruta_mas_larga")) {
         string params[10];
         if (!validarParametros("ruta_mas_larga", params, 0)) return false;
     cout << "Comando valido, Funcion proximamente a implementarse"<<endl;
@@ -205,8 +207,8 @@ if (is_exact(line, "ubicar_elementos")) {
 }
 
 //funcion guardar
- if (line.rfind("guardar", 0) == 0) {
-        istringstream iss(line);
+ if (linea.rfind("guardar", 0) == 0) {
+        istringstream iss(linea);
         string entrada, tipo, archivo, extra;
         iss >> entrada >> tipo >> archivo >> extra;
 
@@ -225,8 +227,8 @@ if (is_exact(line, "ubicar_elementos")) {
 
 if (linea.rfind("simular_comandos", 0) == 0) {
         istringstream iss(linea);
-        string cmd, x, y, extra;
-        iss >> cmd >> x >> y >> extra;
+        string entrada, x, y, extra;
+        iss >> entrada >> x >> y >> extra;
 
         string params[10];
         int cantidad = 0;

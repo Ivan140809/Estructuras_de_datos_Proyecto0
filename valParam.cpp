@@ -14,92 +14,46 @@ bool esNumero(const string& s) { // Nota: Este código fue desarrollado con asis
 
 bool validarParametros(string comando, string params[], int cantidad)
 {
-    if (comando == "cargar_comandos")
-    {
-        if (validarCargar_comandos(params, cantidad)){
-
-            cout << "Resultado exitoso, se cargaron los comandos" << endl;
-        }
-    }
-    else if (comando == "cargar_elementos")
-
-        if (validarCargar_elementos(params, cantidad)){
-
-            cout << "Resultado exitoso, se cargaron los elementos" << endl;
-        }
-
-    else if (comando == "agregar_movimiento")
-
-        if(agregar_movimiento(params, cantidad)){
-
-            cout << "Resultado exitoso, se agrego el movimiento" << endl;
-
-        }
-
-    else if (comando == "agregar_analisis")
-
-        if(agregar_analisis(params, cantidad)){
-
-            cout << "Resultado exitoso, se agrego el analisis" << endl;
-        }
-
-    else if (comando == "agregar_elemento")
-
-        if(agregar_elemento(params, cantidad)){
-
-            cout << "Resultado exitoso, se agrego el elemento" << endl;
-        }
-
-    else if (comando == "guardar")
-        if(validar_guardar(params, cantidad)){
-
-            cout << "Resultado exitoso, se guardo correctamente" << endl;
-        }
-
-    else if (comando == "simular_comandos")
-        if(validar_simular(params, cantidad)){
-
-            cout << "Resultado exitoso, comandos simulados" << endl;
-        }
-
-    else if (comando == "ubicar_elementos")
-        if(validar_ubicar (params, cantidad)){
-
-            cout << "Resultado exitoso, se ubicaron los elementos" << endl;
-        }
-
-    else if (comando == "en_cuadrante")
-        if(validar_cuadrante(params, cantidad)){
-
-            cout << "Resultado exitoso, se realizo el cuadrante" << endl;
-        }
-
-    else if (comando == "crear_mapa")
-        if(validar_crearMapa(params, cantidad)){
-
-            cout << "Resultado exitoso, se creo el mapa" << endl;
-        }
-
-    else if (comando == "ruta_mas_larga")
-        if(validar_ruta(params, cantidad)){
-
-            cout << "Resultado exitoso, se encontro la ruta mas larga" << endl;
-        }
-
-    else if (comando == "ayuda")
-        if(validar_ayuda(params, cantidad)){
-
-            cout << "Resultado exitoso." << endl;
-        }
-
-    else if (comando == "salir")
-        if(validar_salir(params, cantidad)){
-
-            cout << "Resultado exitoso, saliendo" << endl;
-        }
-
-    else
-    {
+    if (comando == "cargar_comandos"){
+       return validarCargar_comandos(params, cantidad);
+     }
+     else if (comando == "cargar_elementos") {
+       return validarCargar_elementos(params, cantidad);
+     }
+     else if (comando == "agregar_movimiento") {
+	return validar_agregar_movimiento(params, cantidad);
+     }
+     else if (comando == "agregar_analisis") {
+	return validar_agregar_analisis(params, cantidad);
+     }
+     else if (comando == "agregar_elemento") {
+	return validar_agregar_elemento(params, cantidad);
+     }
+     else if (comando == "guardar") {
+	return validar_guardar(params, cantidad);
+     }
+     else if (comando == "simular_comandos") {
+        return validar_simular(params, cantidad);
+     }
+     else if (comando == "ubicar_elementos") {
+	return validar_ubicar(params, cantidad);
+     }
+     else if (comando == "en_cuadrante") {
+	return validar_cuadrante(params, cantidad);
+     }
+     else if (comando == "crear_mapa") {
+	return validar_crearMapa(params, cantidad);
+     }
+     else if (comando == "ruta_mas_larga") {
+        return validar_ruta(params, cantidad);
+     }
+     else if (comando == "ayuda") {
+	return validar_ayuda(params, cantidad);
+     }
+     else if (comando == "salir") {
+	return validar_salir(comando);
+     }
+     else {
         cout << "Comando no valido" << endl;
         return false;
     }
@@ -249,6 +203,7 @@ bool validar_guardar(string params[], int cantidad){
     if( cantidad != 2){
         
         cout<< "El formato no es valido"<<endl;
+    return false;
     }
 
     string tipo = params[0];

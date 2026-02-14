@@ -9,11 +9,11 @@ bool validarCargar_comandos(string params[], int cantidad);
 
 bool validarCargar_elementos(string params[], int cantidad);
 
-bool agregar_movimiento(string params[], int cantidad);
+bool validar_agregar_movimiento(string params[], int cantidad);
 
-bool agregar_analisis(string params[], int cantidad);
+bool validar_agregar_analisis(string params[], int cantidad);
 
-bool agregar_elemento(string params[], int cantidad);
+bool validar_agregar_elemento(string params[], int cantidad);
 
 bool validar_guardar(string params[], int cantidad);
 
@@ -29,4 +29,4 @@ bool validar_ruta(string params[], int cantidad);
 
 bool validar_ayuda(string params[], int cantidad);
 
-bool validar_salir(string params[], int cantidad);
+bool validar_salir(string comando);
