@@ -7,6 +7,6 @@ using namespace std;
 void ayuda_print_general();
 
 // Muestra ayuda de uso para un comando específico (ayuda comando)
-void ayuda_print_for(string& cmd);
+void ayuda_print_comando_especifico(string& cmd);
 
 #endif
