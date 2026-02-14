@@ -273,6 +273,7 @@ bool validar_simular(string params[], int cantidad){
 
 
 
+
 }
 
 bool validar_ubicar(string params[], int cantidad){
@@ -297,6 +298,24 @@ bool validar_ayuda(string params[], int cantidad){
 
 }
 
-bool validar_salir(string params[], int cantidad){
+bool validar_salir(string comando){
+
+    if (comando=="salir")
+    {
+        return true;
+        
+    }else{
+
+        cout<<"Comando no valido"<<endl;
+        return false;
+    }
+
+    return false;
+
+
+
+    
+
+
 
 }
