@@ -246,13 +246,38 @@ bool validar_agregar_elemento(string params[], int cantidad){
 
 bool validar_guardar(string params[], int cantidad){
 
+    if( cantidad!=2){
+        
+        cout<< "El formato NO es valido"<<endl;
+    }
+
+    string tipo = params[0];
+
+    if (tipo!="comandos"&& tipo!="comandos") {
+        
+        cout << "Tipo de archivo invalido" << endl;
+        return false;
+    }
+
+    if (params[1].empty())
+    {
+        cout << "Nombre del archivo no encontrado" << endl;
+        return false;
+    }
+
+    return true;
 }
 
 bool validar_simular(string params[], int cantidad){
 
+
+
+
 }
 
 bool validar_ubicar(string params[], int cantidad){
+
+    
 
 }
 
@@ -275,4 +300,3 @@ bool validar_ayuda(string params[], int cantidad){
 bool validar_salir(string params[], int cantidad){
 
 }
-
